@@ -1,13 +1,13 @@
-# AWS Athena Parquet Processing Project
+# AWS Athena Query Project
 
-This project contains Python scripts for processing large Parquet files and querying data using AWS Athena. It includes tools for splitting large datasets and performing SQL queries on cloud-stored data.
+This project contains a Python script for querying flight data using AWS Athena. The script demonstrates how to execute SQL queries against cloud-stored data and export results.
 
 ## 📁 Project Structure
 
 ```
 .
-├── flights-1m.parquet           # Original dataset (1M flight records)
 ├── simple_athena_query.py       # Athena query script with examples
+├── requirements.txt             # Python dependencies
 └── README.md                    # This file
 ```
 
@@ -36,9 +36,12 @@ This project contains Python scripts for processing large Parquet files and quer
 ### Python Dependencies
 ```bash
 # Install using uv (recommended)
-uv pip install pandas pyarrow boto3
+uv pip install -r requirements.txt
 
 # Or using pip
+pip install -r requirements.txt
+
+# Or install individually
 pip install pandas pyarrow boto3
 ```
 
@@ -207,7 +210,8 @@ git clone <repository-url>
 cd glue_parquet
 
 # 2. Install dependencies
-uv pip install pandas pyarrow boto3
+uv pip install -r requirements.txt
+# or: pip install -r requirements.txt
 
 # 3. Configure AWS
 aws configure
